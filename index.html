@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIQUIDSKILLS — Hyperliquid Knowledge for AI Agents</title>
+<meta name="description" content="The missing knowledge between AI agents and production Hyperliquid.">
+<meta property="og:title" content="LIQUIDSKILLS">
+<meta property="og:description" content="The missing knowledge between AI agents and production Hyperliquid.">
+<meta property="og:url" content="https://cloudzombie.github.io/liquidskills">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LIQUIDSKILLS">
+<meta name="twitter:description" content="The missing knowledge between AI agents and production Hyperliquid.">
+<style>
+:root {
+  --bg: #080f14;
+  --fg: #b8d4e8;
+  --dim: #4a6a80;
+  --accent: #00c2ff;
+  --border: #0e1e2a;
+  --hover: #0a1520;
+  --green: #00c2ff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.ascii {
+  color: var(--accent);
+  font-size: 13px;
+  line-height: 1.15;
+  white-space: pre;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+  overflow-x: auto;
+}
+.tagline {
+  color: var(--fg);
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+}
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-bottom: 2.5rem;
+}
+.hero-btn:hover { background: var(--hover); }
+
+h2 {
+  color: var(--accent);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 2.5rem 0 1.25rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 400;
+}
+
+.skill {
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 3px;
+  transition: background 0.1s;
+}
+.skill:hover { background: var(--hover); }
+.skill-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.skill-desc {
+  color: var(--dim);
+  font-size: 13px;
+  margin: 0.3rem 0 0.5rem 0;
+}
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--green);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.copy-btn:hover { border-color: var(--green); background: rgba(0,194,255,0.05); }
+.copy-btn.copied { border-color: var(--green); color: var(--green); }
+.copy-btn svg, .hero-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+.section-text { color: var(--dim); font-size: 13px; }
+
+.how-to-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.how-to-method {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  background: var(--hover);
+}
+.how-to-method-title { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 0.25rem; }
+.how-to-method-desc { font-size: 12px; color: var(--dim); margin-bottom: 0.5rem; line-height: 1.5; }
+.how-to-method code {
+  display: block;
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.4rem 0.6rem;
+  word-break: break-all;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--dim);
+  font-size: 12px;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer a { color: var(--dim); }
+.footer a:hover { color: var(--accent); text-decoration: none; }
+
+.facts {
+  background: var(--hover);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+.facts li {
+  color: var(--dim);
+  font-size: 13px;
+  list-style: none;
+  padding: 0.2rem 0;
+}
+.facts li::before { content: "▸ "; color: var(--accent); }
+.facts code { color: var(--accent); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="ascii">
+██╗     ██╗ ██████╗ ██╗   ██╗██╗██████╗ ███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
+██║     ██║██╔═══██╗██║   ██║██║██╔══██╗██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
+██║     ██║██║   ██║██║   ██║██║██║  ██║███████╗█████╔╝ ██║██║     ██║     ███████╗
+██║     ██║██║▄▄ ██║██║   ██║██║██║  ██║╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
+███████╗██║╚██████╔╝╚██████╔╝██║██████╔╝███████║██║  ██╗██║███████╗███████╗███████║
+╚══════╝╚═╝ ╚══▀▀═╝  ╚═════╝ ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+</div>
+
+<p class="tagline">The missing knowledge between AI agents and production Hyperliquid.<span class="cursor"></span></p>
+
+<button class="hero-btn" onclick="copyText('https://raw.githubusercontent.com/cloudzombie/liquidskills/main/SKILL.md', this)">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+  liquidskills/SKILL.md
+</button>
+
+<h2>Skills</h2>
+
+<div id="skills"></div>
+
+<h2>What Agents Get Wrong</h2>
+<ul class="facts">
+  <li>Chain ID is <code>999</code> (mainnet) and <code>998</code> (testnet) — not <code>1</code></li>
+  <li>RPC is <code>https://rpc.hyperliquid.xyz/evm</code> — not an Ethereum endpoint</li>
+  <li>Reads go to <code>POST /info</code> — writes to <code>POST /exchange</code> (signed)</li>
+  <li>Asset IDs: perps = index in <code>meta.universe</code>, spot = <code>10000 + index</code></li>
+  <li>Nonces are a rolling window — not linear. Use millisecond timestamps</li>
+  <li>Native token is <code>HYPE</code> (18 decimals) — not ETH, not WETH</li>
+  <li>Bridge address: <code>0x2222...2222</code> moves HYPE from HyperCore → HyperEVM</li>
+  <li>Priority fees are burned to zero address — not to validators</li>
+  <li>Cancun hardfork without blobs. EIP-1559 enabled. Base fees burned</li>
+</ul>
+
+<h2>How to Use</h2>
+<p class="section-text" style="margin-bottom:0.75rem">Give your agent any skill URL. It fetches the page, reads the content, and instantly knows more about Hyperliquid.</p>
+
+<div class="how-to-methods">
+  <div class="how-to-method">
+    <div class="how-to-method-title">Tell your agent</div>
+    <div class="how-to-method-desc">Works in Claude, Codex, Cursor, or any agent that can fetch URLs.</div>
+    <code>"Read liquidskills before you start building"</code>
+  </div>
+  <div class="how-to-method">
+    <div class="how-to-method-title">curl / fetch</div>
+    <div class="how-to-method-desc">For scripting, pipelines, and system prompts.</div>
+    <code>curl -s https://raw.githubusercontent.com/cloudzombie/liquidskills/main/SKILL.md</code>
+  </div>
+  <div class="how-to-method">
+    <div class="how-to-method-title">Specific skill</div>
+    <div class="how-to-method-desc">Load only what you need for the task.</div>
+    <code>curl -s https://raw.githubusercontent.com/cloudzombie/liquidskills/main/api/SKILL.md</code>
+  </div>
+  <div class="how-to-method">
+    <div class="how-to-method-title">OpenClaw / ClawHub</div>
+    <div class="how-to-method-desc">Agent skill for OpenClaw users.</div>
+    <code>clawhub install liquidskills</code>
+  </div>
+</div>
+
+<div class="footer">
+  <span>MIT License</span>
+  <a href="https://github.com/cloudzombie/liquidskills">GitHub Repo</a>
+  <a href="https://ethskills.com">Inspired by ethskills.com</a>
+</div>
+
+<script>
+const BASE = 'https://raw.githubusercontent.com/cloudzombie/liquidskills/main';
+
+const skills = [
+  { name: 'Ship', slug: 'ship', desc: 'End-to-end guide from idea to deployed HyperEVM dApp. Start here for any build.' },
+  { name: 'Why Hyperliquid', slug: 'why', desc: 'HyperBFT consensus, native orderbook, honest tradeoffs vs other chains.' },
+  { name: 'Gas & Costs', slug: 'gas', desc: 'HYPE gas costs, what things actually cost on HyperEVM, mainnet vs testnet.' },
+  { name: 'Wallets', slug: 'wallets', desc: 'MetaMask + chain ID 999, API wallets for automation, signing mechanics.' },
+  { name: 'Architecture', slug: 'architecture', desc: 'HyperCore vs HyperEVM — what lives where, how they connect, the system model.' },
+  { name: 'Standards', slug: 'standards', desc: 'ERC-20 on HyperEVM, HIP-1/HIP-2/HIP-3 token standards, spot assets.' },
+  { name: 'Tools', slug: 'tools', desc: 'Hardhat, Foundry, viem, wagmi, hyperliquid-python-sdk, hyperliquid-ts-sdk.' },
+  { name: 'Building Blocks', slug: 'building-blocks', desc: 'HyperSwap V2, bonding curves, HyperCore perps and spot as DeFi legos.' },
+  { name: 'Orchestration', slug: 'orchestration', desc: 'How an AI agent plans, builds, and deploys a complete Hyperliquid application.' },
+  { name: 'Contract Addresses', slug: 'addresses', desc: 'Verified addresses: system bridge (0x2222...2222), HyperSwap V2, key contracts.' },
+  { name: 'Concepts', slug: 'concepts', desc: 'Asset IDs, nonce mechanics, margin types, funding. The mental models you need.' },
+  { name: 'Security', slug: 'security', desc: 'Solidity security for HyperEVM + API signing safety, nonce management, reentrancy.' },
+  { name: 'Testing', slug: 'testing', desc: 'Foundry and Hardhat for HyperEVM — unit, fuzz, invariant, and testnet fork testing.' },
+  { name: 'Indexing', slug: 'indexing', desc: 'Reading HyperCore via /info, HyperEVM events, WebSocket subscriptions, Supabase.' },
+  { name: 'API Reference', slug: 'api', desc: 'Complete /info and /exchange endpoint reference with Python and JS examples.' },
+  { name: 'Frontend UX', slug: 'frontend-ux', desc: 'wagmi config for chain 999, transaction button patterns, HYPE formatting rules.' },
+  { name: 'Frontend Playbook', slug: 'frontend-playbook', desc: 'Full build-to-production pipeline: local dev, testnet, mainnet, Vercel config.' },
+  { name: 'QA', slug: 'qa', desc: 'Production QA checklist. Run with a SEPARATE reviewer agent before shipping.' },
+  { name: 'Audit', slug: 'audit', desc: 'Smart contract audit checklist for HyperEVM — 100+ items across all risk domains.' },
+];
+
+const container = document.getElementById('skills');
+
+skills.forEach(s => {
+  const url = `${BASE}/${s.slug}/SKILL.md`;
+  const div = document.createElement('div');
+  div.className = 'skill';
+  div.innerHTML = `
+    <div class="skill-name">${s.name}</div>
+    <div class="skill-desc">${s.desc}</div>
+    <button class="copy-btn" onclick="copyText('${url}', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      liquidskills/${s.slug}/SKILL.md
+    </button>
+  `;
+  container.appendChild(div);
+});
+
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML;
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied`;
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 1500);
+  });
+}
+</script>
+</body>
+</html>
