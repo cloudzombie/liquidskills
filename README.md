@@ -4,7 +4,7 @@
 
 An agent can read any skill file and instantly know what it needs to build, deploy, and ship on Hyperliquid — without stale training data, wrong chain IDs, or broken assumptions.
 
-🌐 **[liquidskills.xyz](https://cloudzombie.github.io/liquidskills)** *(coming soon — set up GitHub Pages to go live)*
+🌐 **[liquidskills.help](https://liquidskills.help)** *(live)*
 
 ---
 
