@@ -14,12 +14,12 @@
 <meta name="twitter:description" content="The missing knowledge between AI agents and production Hyperliquid.">
 <style>
 :root {
-  --bg: #04060c;
-  --fg: #dbfbf6;
-  --dim: #336e67;
+  --bg: #072723;
+  --fg: #f6fefd;
+  --dim: #2e6b62;
   --accent: #97fce4;
-  --border: #0f3933;
-  --hover: #071f1b;
+  --border: #0e3d37;
+  --hover: #041f1b;
   --green: #97fce4;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -123,6 +123,36 @@ h2 {
 .copy-btn:hover { border-color: var(--green); background: rgba(151,252,228,0.05); }
 .copy-btn.copied { border-color: var(--green); color: var(--green); }
 .copy-btn svg, .hero-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* Brand header */
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.hl-symbol {
+  filter: drop-shadow(0 0 10px rgba(151,252,228,0.4));
+  flex-shrink: 0;
+}
+.brand-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.brand-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 4px;
+  line-height: 1;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
 .section-text { color: var(--dim); font-size: 13px; }
 
@@ -253,13 +283,14 @@ h2 {
   </button>
 </div>
 
-<div class="ascii">
-██╗     ██╗ ██████╗ ██╗   ██╗██╗██████╗ ███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
-██║     ██║██╔═══██╗██║   ██║██║██╔══██╗██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
-██║     ██║██║   ██║██║   ██║██║██║  ██║███████╗█████╔╝ ██║██║     ██║     ███████╗
-██║     ██║██║▄▄ ██║██║   ██║██║██║  ██║╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
-███████╗██║╚██████╔╝╚██████╔╝██║██████╔╝███████║██║  ██╗██║███████╗███████╗███████║
-╚══════╝╚═╝ ╚══▀▀═╝  ╚═════╝ ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+<div class="brand-header">
+  <svg class="hl-symbol" width="36" height="36" viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M144 71.6991C144 119.306 114.866 134.582 99.5156 120.98C86.8804 109.889 83.1211 86.4521 64.116 84.0456C39.9942 81.0113 37.9057 113.133 22.0334 113.133C3.5504 113.133 0 86.2428 0 72.4315C0 58.3063 3.96809 39.0542 19.736 39.0542C38.1146 39.0542 39.1588 66.5722 62.132 65.1073C85.0007 63.5379 85.4184 34.8689 100.247 22.6271C113.195 12.0593 144 23.4641 144 71.6991Z" fill="#97FCE4"/>
+  </svg>
+  <div class="brand-title">
+    <span class="brand-name">LIQUIDSKILLS</span>
+    <span class="brand-sub">powered by Hyperliquid</span>
+  </div>
 </div>
 
 <p class="tagline">The missing knowledge between AI agents and production Hyperliquid.<span class="cursor"></span></p>
