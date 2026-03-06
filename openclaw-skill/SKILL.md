@@ -21,7 +21,7 @@ Your training data about Hyperliquid is **incomplete or wrong**. Chain IDs, RPC 
 ## Base URL
 
 ```
-https://liquidskills.help/<topic>/SKILL.md
+https://liquidskills.help/{skill}/SKILL.md
 ```
 
 Or via raw GitHub:

@@ -1,0 +1,66 @@
+# LIQUIDSKILLS
+
+> The missing knowledge between AI agents and production Hyperliquid.
+
+LIQUIDSKILLS is a set of skill files for AI agents building on Hyperliquid. Each file is a focused, accurate, agent-readable reference. Fetch any URL below and read it before building.
+
+## How to use
+
+Fetch the main router first, then fetch specific skills as needed:
+
+```
+curl -s https://liquidskills.help/SKILL.md
+```
+
+Or fetch a specific skill directly:
+
+```
+curl -s https://liquidskills.help/api/SKILL.md
+curl -s https://liquidskills.help/ship/SKILL.md
+curl -s https://liquidskills.help/wallets/SKILL.md
+```
+
+## Skills
+
+- [Main Router](https://liquidskills.help/SKILL.md): Start here. Routes to all other skills by task.
+- [Ship](https://liquidskills.help/ship/SKILL.md): End-to-end guide from idea to deployed HyperEVM dApp.
+- [Why Hyperliquid](https://liquidskills.help/why/SKILL.md): HyperBFT, native orderbook, honest tradeoffs.
+- [Gas & Costs](https://liquidskills.help/gas/SKILL.md): HYPE gas, actual costs on HyperEVM.
+- [Wallets](https://liquidskills.help/wallets/SKILL.md): MetaMask + chain ID 999, API wallets, signing.
+- [Architecture](https://liquidskills.help/architecture/SKILL.md): HyperCore vs HyperEVM — the system model.
+- [Standards](https://liquidskills.help/standards/SKILL.md): ERC-20 on HyperEVM, HIP-1/HIP-2/HIP-3 token standards.
+- [Tools](https://liquidskills.help/tools/SKILL.md): Hardhat, Foundry, viem, wagmi, HL SDK.
+- [Building Blocks](https://liquidskills.help/building-blocks/SKILL.md): HyperSwap V2, bonding curves, DeFi legos.
+- [Orchestration](https://liquidskills.help/orchestration/SKILL.md): How an agent plans and deploys end-to-end.
+- [Contract Addresses](https://liquidskills.help/addresses/SKILL.md): Verified addresses — stop hallucinating them.
+- [Concepts](https://liquidskills.help/concepts/SKILL.md): Asset IDs, nonces, margins, the mental models.
+- [Security](https://liquidskills.help/security/SKILL.md): Solidity + API signing security, nonce safety.
+- [Testing](https://liquidskills.help/testing/SKILL.md): Foundry/Hardhat for HyperEVM, fuzz, invariant, fork.
+- [Indexing](https://liquidskills.help/indexing/SKILL.md): /info API, WebSocket, EVM event indexing.
+- [API Reference](https://liquidskills.help/api/SKILL.md): Complete /info, /exchange, WebSocket reference.
+- [Frontend UX](https://liquidskills.help/frontend-ux/SKILL.md): wagmi chain 999 config, transaction UX rules.
+- [Frontend Playbook](https://liquidskills.help/frontend-playbook/SKILL.md): Full build-to-production pipeline.
+- [QA](https://liquidskills.help/qa/SKILL.md): Pre-ship QA checklist for Hyperliquid dApps.
+- [Audit](https://liquidskills.help/audit/SKILL.md): Contract audit checklist, HyperEVM-specific.
+
+## Raw GitHub URLs (alternative)
+
+All skills are also available via raw GitHub:
+
+```
+https://raw.githubusercontent.com/cloudzombie/liquidskills/main/SKILL.md
+https://raw.githubusercontent.com/cloudzombie/liquidskills/main/api/SKILL.md
+https://raw.githubusercontent.com/cloudzombie/liquidskills/main/ship/SKILL.md
+```
+
+## Key facts agents get wrong
+
+- Chain ID is 999 (mainnet) and 998 (testnet). Not 1.
+- RPC is https://rpc.hyperliquid.xyz/evm — not an Ethereum endpoint.
+- Reads go to POST /info. Writes go to POST /exchange (signed). Different endpoints.
+- Asset IDs: perps = index in meta.universe, spot = 10000 + index. Never hardcode.
+- Nonces are a rolling window — not linear. Use millisecond timestamps.
+- Native token is HYPE (18 decimals on HyperEVM, 8 decimals in HyperCore). Not ETH.
+- Bridge address: 0x2222222222222222222222222222222222222222
+- Priority fees burned to zero address — no validators, no MEV.
+- Cancun hardfork without blobs. EIP-1559 enabled.
