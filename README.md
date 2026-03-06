@@ -12,7 +12,7 @@ An agent can read any skill file and instantly know what it needs to build, depl
 
 LIQUIDSKILLS is a set of SKILL.md files — each one focused, dense, and immediately useful. Point an AI agent at any URL and it reads the content, corrects its misconceptions, and builds correctly.
 
-Inspired by [ethskills.com](https://ethskills.com). Built for Hyperliquid.
+The Hyperliquid skill set for AI agents. Built for builders.
 
 ---
 
@@ -90,6 +90,6 @@ curl -s https://raw.githubusercontent.com/cloudzombie/liquidskills/main/wallets/
 Something wrong or missing? Open a PR.
 
 Built by [cloudzombie](https://github.com/cloudzombie).  
-Inspired by [ethskills.com](https://ethskills.com) by [austintgriffith](https://github.com/austintgriffith).
+Built by [cloudzombie](https://github.com/cloudzombie).
 
 MIT License.

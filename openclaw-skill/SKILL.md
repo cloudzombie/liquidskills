@@ -1,6 +1,6 @@
 ---
 name: liquidskills
-description: "Hyperliquid development knowledge for AI agents — HyperEVM, HyperCore API, wallets, smart contracts, DeFi, and production deployment. Use when: (1) building any HyperEVM dApp or smart contract, (2) integrating with the Hyperliquid API (/info or /exchange), (3) writing or reviewing Solidity for HyperEVM, (4) deploying to HyperEVM mainnet (chain ID 999) or testnet (998), (5) working with HYPE token, bonding curves, HyperSwap V2, or HIP token standards, (6) any question about HyperCore perps, spot, nonces, asset IDs, or API signing. NOT for: Ethereum mainnet or L2 development (use ethskills for that), trading signals, or price checking."
+description: "Hyperliquid development knowledge for AI agents — HyperEVM, HyperCore API, wallets, smart contracts, DeFi, and production deployment. Use when: (1) building any HyperEVM dApp or smart contract, (2) integrating with the Hyperliquid API (/info or /exchange), (3) writing or reviewing Solidity for HyperEVM, (4) deploying to HyperEVM mainnet (chain ID 999) or testnet (998), (5) working with HYPE token, bonding curves, HyperSwap V2, or HIP token standards, (6) any question about HyperCore perps, spot, nonces, asset IDs, or API signing. NOT for: Ethereum mainnet or L2 development (use a different skill for that), trading signals, or price checking."
 metadata:
   {
     "openclaw": {
@@ -104,4 +104,4 @@ When integrating Hyperliquid API:
 
 Something wrong or missing? [Open a PR](https://github.com/cloudzombie/liquidskills).
 
-Built by [cloudzombie](https://github.com/cloudzombie) · Inspired by [ethskills.com](https://ethskills.com)
+Built by [cloudzombie](https://github.com/cloudzombie)
